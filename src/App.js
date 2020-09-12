@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+//stylesheet import
+import "./App.scss";
+
+//components import
+import HouseSelect from "./components/houses/HouseSelect";
+import RangeSlider from "./components/rangeslider/RangeSlider";
+
+//image import
+import logo from './assets/nock-nock-logo-wht.png';
+import sideImg from './assets/Group 36.png';
+
+
+const App = () => {
+	const [completed, setComplete] = useState([20, 40]);
+	return (
+		<div className="App">
+    <img className="App-logo" src={logo} alt="logo"/>
+			<BrowserRouter>
+				<Switch>
+					<Route exact path="/" component={()=><HouseSelect completed={completed[0]}/>} />
+					<Route path="/range" component={()=><RangeSlider completed={completed[1]}/>} />
+				</Switch>
+			</BrowserRouter>
+      <img className="App-decor-img" src={sideImg} alt="decorative img"/>
+		</div>
+	);
+};
 
 export default App;

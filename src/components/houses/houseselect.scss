@@ -1,0 +1,50 @@
+.house-select {
+	height: 85%;
+	width: 95%;
+	background-color: #fff;
+	overflow: hidden;
+	border-radius: 10px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -45%);
+	text-align: center;
+
+	& h2 {
+		margin: 30px 0;
+		font-weight: 300;
+		& span {
+			font-weight: 500;
+		}
+	}
+	&-others {
+		transform: translateY(-20px);
+		text-decoration: underline;
+	}
+}
+
+@media (min-width: 1024px) {
+	.house-select {
+		height: 85%;
+		width: 60%;
+		background-color: #fff;
+		overflow: hidden;
+		border-radius: 10px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -45%);
+		text-align: center;
+		& h2 {
+			margin: 30px 0 20px 0;
+			font-weight: 300;
+			& span {
+				font-weight: 500;
+			}
+		}
+		&-others {
+			transform: translateY(-20px);
+			text-decoration: underline;
+		}
+	}
+}
